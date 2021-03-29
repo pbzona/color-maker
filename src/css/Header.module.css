@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  padding: 1.8rem 0;
+  background-color: var(--black);
+  color: var(--white);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerText {
+  font-size: 4.8rem;
+}

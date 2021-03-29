@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Variables */
+:root {
+  --black: #222;
+  --white: #eee;
+  --lightGray: #aaa;
+  --medGray: #777;
+  --darkGray: #444;
+}
+
+/* Global Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--white);
+}
+
