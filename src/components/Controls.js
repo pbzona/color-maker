@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useFlags } from 'launchdarkly-react-client-sdk'
 
 import { DEFAULT_LEFT, DEFAULT_RIGHT } from './ColorMaker';
 
 function Controls({ onSizeChange, onLeftColorChange, onRightColorChange }) {
+  const { higherColorLimit } = useFlags()
   const [size, setSize] = useState(4)
   const [leftColor, setLeftColor] = useState(DEFAULT_LEFT)
   const [rightColor, setRightColor] = useState(DEFAULT_RIGHT)
@@ -19,13 +21,13 @@ function Controls({ onSizeChange, onLeftColorChange, onRightColorChange }) {
 
   function handleRightColorChange(event) {
     setRightColor(event.target.value)
-    onLeftColorChange(event.target.value)
+    onRightColorChange(event.target.value)
   }
 
   return (
     <div>
       <label htmlFor="size">Size:</label>
-      <input type="range" max="6" min="2" step="1" value={size} onChange={handleSizeChange} />
+      <input type="range" max={higherColorLimit ? 10 : 6} min="2" step="1" value={size} onChange={handleSizeChange} />
       <p>{size}</p>
 
       <label htmlFor="left-color">Left Color: </label>
