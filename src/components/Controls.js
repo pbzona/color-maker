@@ -1,7 +1,17 @@
+import { useState } from 'react';
+
 function Controls() {
+  const [size, setSize] = useState(4)
+
+  function handleSizeChange(event) {
+    setSize(event.target.value)
+  }
+
   return (
     <div>
-      <h1>Controls</h1>
+      <label htmlFor="size">Size:</label>
+      <input type="range" max="8" min="2" step="1" value={size} onChange={handleSizeChange} />
+      <p>{size}</p>
     </div>
   )
 }
