@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useFlags } from 'launchdarkly-react-client-sdk'
 
+import styles from '../css/Controls.module.css';
+
 import { DEFAULT_LEFT, DEFAULT_RIGHT } from './ColorMaker';
 
 function Controls({ onSizeChange, onLeftColorChange, onRightColorChange }) {
@@ -25,18 +27,24 @@ function Controls({ onSizeChange, onLeftColorChange, onRightColorChange }) {
   }
 
   return (
-    <div>
-      <label htmlFor="size">Size:</label>
-      <input type="range" max={colorLimit} min="2" step="1" value={size} onChange={handleSizeChange} />
-      <p>{size}</p>
+    <div className={styles.container}>
+      <fieldset>
+        <label htmlFor="left-color">Left Color: </label>
+        <input type="color" name="left-color" value={leftColor} onChange={handleLeftColorChange}></input>
+        <p>{leftColor}</p>
+      </fieldset>
+      
+      <fieldset>
+        <label htmlFor="size">Size:</label>
+        <input type="range" max={colorLimit} min="2" step="1" value={size} onChange={handleSizeChange} />
+        <p>{size}</p>
+      </fieldset>
 
-      <label htmlFor="left-color">Left Color: </label>
-      <input type="color" name="left-color" value={leftColor} onChange={handleLeftColorChange}></input>
-      <p>{leftColor}</p>
-
-      <label htmlFor="right-color">Right Color: </label>
-      <input type="color" name="right-color" value={rightColor} onChange={handleRightColorChange}></input>
-      <p>{rightColor}</p>
+      <fieldset>
+        <label htmlFor="right-color">Right Color: </label>
+        <input type="color" name="right-color" value={rightColor} onChange={handleRightColorChange}></input>
+        <p>{rightColor}</p>
+      </fieldset>
     </div>
   )
 }
