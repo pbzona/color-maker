@@ -6,8 +6,8 @@ import generateColorRamp from '../lib/generateColorRamp'
 import styles from '../css/ColorMaker.module.css';
 import Controls from './Controls';
 
-const DEFAULT_LEFT = '#FFFFFF'
-const DEFAULT_RIGHT = '#111111'
+export const DEFAULT_LEFT = '#2c7dbf'
+export const DEFAULT_RIGHT = '#b836d9'
 
 function ColorMaker() {
   const { colormakerControlPanel } = useFlags()
