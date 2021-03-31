@@ -7,7 +7,7 @@ import styles from '../css/Header.module.css';
 
 function Header() {
   const [username, setUsername] = useState('Sample User')
-  const { loginEnabled } = useFlags()
+  const { loginEnabled, redHeaderBackground } = useFlags()
   const ldClient = useLDClient()
   
   function simulateLogin(event) {
@@ -36,7 +36,7 @@ function Header() {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${redHeaderBackground && styles.headerAlt}`}>
       <h1 className={styles.headerText}>ColorMaker</h1>
       { loginEnabled && 
         (

@@ -12,3 +12,7 @@
 .headerText {
   font-size: 4.8rem;
 }
+
+.headerAlt {
+  background-color: darkred;
+}
