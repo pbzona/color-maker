@@ -25,7 +25,7 @@ function Controls({ onSizeChange, onLeftColorChange, onRightColorChange }) {
   return (
     <div>
       <label htmlFor="size">Size:</label>
-      <input type="range" max="8" min="2" step="1" value={size} onChange={handleSizeChange} />
+      <input type="range" max="6" min="2" step="1" value={size} onChange={handleSizeChange} />
       <p>{size}</p>
 
       <label htmlFor="left-color">Left Color: </label>
