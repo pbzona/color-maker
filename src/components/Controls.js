@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { DEFAULT_LEFT, DEFAULT_RIGHT } from './ColorMaker';
 
-function Controls({ onSizeChange }) {
+function Controls({ onSizeChange, onLeftColorChange, onRightColorChange }) {
   const [size, setSize] = useState(4)
   const [leftColor, setLeftColor] = useState(DEFAULT_LEFT)
   const [rightColor, setRightColor] = useState(DEFAULT_RIGHT)
@@ -14,10 +14,12 @@ function Controls({ onSizeChange }) {
 
   function handleLeftColorChange(event) {
     setLeftColor(event.target.value)
+    onLeftColorChange(event.target.value)
   }
 
   function handleRightColorChange(event) {
     setRightColor(event.target.value)
+    onLeftColorChange(event.target.value)
   }
 
   return (
