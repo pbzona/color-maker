@@ -11,7 +11,6 @@ const DEFAULT_RIGHT = '#111111'
 
 function ColorMaker() {
   const { colormakerControlPanel } = useFlags()
-  console.log(useFlags())
   const [size, setSize] = useState(4)
   const [leftColor, setLeftColor] = useState(DEFAULT_LEFT)
   const [rightColor, setRightColor] = useState(DEFAULT_RIGHT)
