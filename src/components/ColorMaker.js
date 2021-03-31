@@ -18,15 +18,23 @@ function ColorMaker() {
 
   useEffect(() => {
     let generatedColors = generateColorRamp(leftColor, rightColor, size)
-    setLeftColor(generatedColors[0])
-    setRightColor(generatedColors[generatedColors.length - 1])
     setColors([leftColor, ...generatedColors, rightColor])
     setSize(colors.length)
   }, [])
 
+  // Recalculate size on all changes to color
+  useEffect(() => {
+    setSize(colors.length)
+  }, [colors])
+
+  function onSizeChange(updatedSize) {
+    let generatedColors = generateColorRamp(leftColor, rightColor, updatedSize)
+    setColors([leftColor, ...generatedColors, rightColor])
+  }
+
   return (
     <div className={styles.container}>
-      { colormakerControlPanel && <Controls /> }
+      { colormakerControlPanel && <Controls onSizeChange={onSizeChange}/> }
       <div className={styles.ramp}>
         {colors.map(color => {
           return (

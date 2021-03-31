@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-function Controls() {
+function Controls({ onSizeChange }) {
   const [size, setSize] = useState(4)
 
   function handleSizeChange(event) {
     setSize(event.target.value)
+    onSizeChange(event.target.value)
   }
 
   return (
