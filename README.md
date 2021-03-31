@@ -35,5 +35,24 @@ The `multiple_ramps` flag uses a boolean value to determine whether or not a use
 
 Once I had a few features added, my imaginary marketing team suggested a total branding overhaul!!! We wanted to change the brand color from black to red, but didn't want to startle all of our users at once. The `red_header_background` flag allowed me to roll out the change incrementally, starting with 25% of users. Implementation is [here](https://github.com/pbzona/color-maker/blob/main/src/components/Header.js#L39).
 
+## Demo
 
+A live demo is hosted at: [https://colormakerdemo.netlify.app/](https://colormakerdemo.netlify.app/)
+
+For testing, below is a list of some users that correspond with controlled segments:
+
+**Admins**
+`phil`
+
+**Pro**
+`first_customer`
+`poweruser`
+
+**Basic**
+`joe`
+`violet`
+
+There is also a user `new_customer_4` who gets the red header background variation. You can create a new user by entering a new username into the text field and clicking "Log in." Usernames are case and whitespace sensitive. 
+
+To create a user who is a member of one of those segments, create a new user whose name starts with `admin` or `pro`.
 
