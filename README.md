@@ -33,7 +33,7 @@ The `color_limit` flag uses a number value to set a maximum number of colors tha
 
 The `multiple_ramps` flag uses a boolean value to determine whether or not a user may create additional color ramps. This flag controls whether the "add" button is clickable as well as its message - basic users will see that it is a beta feature only available to pro users. Code implementation can be found [here](https://github.com/pbzona/color-maker/blob/main/src/components/ColorMakerList.js#L26-27).
 
-Once I had a few features added, my imaginary marketing team suggested a total branding overhaul!!! We wanted to change the brand color from black to red, but didn't want to startle all of our users at once. The `red_header_background` flag allowed me to roll out the change incrementally, starting with 25% of users. Implementation is [here](https://github.com/pbzona/color-maker/blob/main/src/components/Header.js#L39).
+Once I had a few features added, my imaginary marketing team suggested a total branding overhaul!!! We wanted to change the brand color from black to red, but didn't want to startle all of our users at once. The `red_header_background` flag allowed me to roll out the change to 25% of users, so we can gather feedback and decide whether to proceed. Implementation is [here](https://github.com/pbzona/color-maker/blob/main/src/components/Header.js#L39).
 
 ## Demo
 
