@@ -1,0 +1,11 @@
+.btn {
+  border: none;
+  background-color: crimson;
+  color: var(--white);
+  font-weight: bold;
+  padding: 2.4rem 3.6rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
